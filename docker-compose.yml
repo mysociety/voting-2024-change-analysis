@@ -1,9 +1,9 @@
 services:
   app:
-    image: mysociety/template_data_repo:${TAG:-latest}
+    image: mysociety/voting-2024-change-analysis:${TAG:-latest}
     build:
       context: .
       dockerfile: Dockerfile.dev
-    working_dir: /workspaces/template_data_repo      
+    working_dir: /workspaces/voting_2024_change_analysis      
     volumes:
-      - ./:/workspaces/template_data_repo/
+      - ./:/workspaces/voting_2024_change_analysis/

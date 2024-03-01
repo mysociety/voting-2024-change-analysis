@@ -7,7 +7,7 @@
 		".devcontainer/initializeCommand"
 	],
 	"postCreateCommand": ".devcontainer/postCreateCommand",
-	"workspaceFolder": "/workspaces/template_data_repo",
+	"workspaceFolder": "/workspaces/voting_2024_change_analysis",
 	"customizations": {
 		"vscode": {
 			"extensions": [

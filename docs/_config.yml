@@ -1,8 +1,8 @@
 theme: jekyll-theme-slate
-title: template_data_repo
-description: Standardised template for mysociety data repositories
+title: voting-2024-change-analysis
+description: Quick analysis of effects of changes made to TWFY records
 
-baseurl: "/template_data_repo"
+baseurl: "/voting-2024-change-analysis"
 url: "https://pages.mysociety.org"
 
 collections:
