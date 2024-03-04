@@ -187,12 +187,23 @@ class SimplifiedGradiatedScore(ScoringFuncProtocol):
 
         score = points / avaliable_points
 
-        # if more than one absent vote cap the score
+        total = (
+            votes_same.add(votes_different).add(votes_absent).add(votes_abstain).strong
+        )
+
+        # if more than one absent vote cap the score to prevent a consistently
         if votes_absent.strong > 1:
+            if score <= 0.05:
+                score = 0.06
+            elif score >= 0.95:
+                score = 0.94
+
+        # if more than one-third absent vote cap the score to prevent an 'almost always'
+        if votes_absent.strong >= total / 3:
             if score <= 0.15:
-                score = 0.18
+                score = 0.16
             elif score >= 0.85:
-                score = 0.83
+                score = 0.84
 
         return score
 
@@ -256,11 +267,22 @@ class SimplifiedScore(ScoringFuncProtocol):
 
         score = points / avaliable_points
 
-        # if more than one absent vote cap the score
+        total = (
+            votes_same.add(votes_different).add(votes_absent).add(votes_abstain).strong
+        )
+
+        # if more than one absent vote cap the score to prevent a consistently
         if votes_absent.strong > 1:
+            if score <= 0.05:
+                score = 0.06
+            elif score >= 0.95:
+                score = 0.94
+
+        # if more than one-third absent vote cap the score to prevent an 'almost always'
+        if votes_absent.strong >= total / 3:
             if score <= 0.15:
-                score = 0.18
+                score = 0.16
             elif score >= 0.85:
-                score = 0.83
+                score = 0.84
 
         return score
