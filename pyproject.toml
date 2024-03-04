@@ -32,3 +32,6 @@ publish_dir = "docs/"
 publish_url = "https://pages.mysociety.org/voting_2024_change_analysis/"
 credit_text = "If you find this data useful, please let us know to help us make the case for future funding."
 credit_url = "https://survey.alchemer.com/s3/6876792/Data-usage"
+
+[tool.ruff]
+extend-include = ["*.ipynb"]
